@@ -1,0 +1,315 @@
+
+* {
+box-sizing: border-box;
+padding: 3px;
+}
+
+body {
+    font-family: 'TT Lakes';
+}
+
+.container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+/*=======HEADER========*/
+.header__icon {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+}
+
+.header__logo {
+    width: 103px;
+    height: 54px;
+}
+.header__divider {
+    width: 2px;
+    height: 32px;
+    background-color: #EAEAEA;
+    margin: 0 8px;
+    border-radius: 5px;
+}
+.header__icon--menu {background-image: url(./assets/ic/burger.svg)}
+.header__logo {background-image: url(./assets/ic/444.svg)}
+
+.header__icon--call{background-image: url(./assets/ic/call.svg);}
+.header__icon--message{background-image: url(./assets/ic/chat.svg);}
+.header__icon--profile{background-image: url(./assets/ic/profile.svg);}
+
+.header__icon--repair { background-image: url(./assets/ic/repair.svg);}
+.header__icon--checkstatus { background-image: url(./assets/ic/checkstatus.svg);}
+    
+.header__icon--call,
+.header__icon--message,
+.header__icon--profile {
+    display: none;
+}
+.container__left,
+.container__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;    
+}
+
+
+/*========MENU========*/
+.promo__title {
+    font-family: TT Lakes;
+    padding-left: 15px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.promo__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: aqua;
+    border-radius: 2px;
+}
+.promo__content {
+    display: flex;
+     justify-content: space-between;
+
+}
+
+.promo__left {
+    display: flex;
+    font-weight: 700;
+}
+.promo-btn:hover {
+    text-decoration: underline;
+    text-decoration-color: aqua;
+}
+
+.promo__right {
+    display: none;
+    
+}
+
+.promo-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row-reverse;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 400;
+
+}
+.menu {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 10px 0;
+  cursor: pointer;
+
+}
+.menu__slide::-webkit-scrollbar {
+    display: none;
+}
+
+.menu__slide {
+margin: 10px;;
+  display: flex; 
+  margin: 0;
+  white-space: nowrap;
+  list-style: none;
+  gap: 16px;
+  padding: 0 10px;
+ 
+}
+
+.menu__btn {
+    background: transparent;
+    flex-shrink: 0; 
+    min-width: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 0 12px;
+    text-align: center;
+    border: 2px solid transparent; 
+    color: #848585;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.menu__btn:active,
+.menu__btn:focus {
+    border-color: aqua;
+    color: #848585;
+    border-radius: 10px;
+    outline: none;
+}
+
+/*========MAIN========*/
+.readmore__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.readmore__text{
+    font-size: 14px;
+    color: #848585;
+    position: relative;
+    width: 100%;}
+
+.readmore__hidden{
+    font-size: 14px;
+    color: #848585;
+    position: relative;
+    width: 100%;
+    display: none;
+}
+.readmore__img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.readmore-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background-color: 0;
+    background: transparent;
+}
+/*========TABLET========*/
+
+@media (min-width:768px) and (max-width: 1024px) {
+.header__icon--call,
+.header__icon--message,
+.header__icon--profile {
+    display: inline-block;
+}
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+.container__left,
+.container__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+    .menu__btn:focus-visible {
+    color: #848585; 
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    outline: none;
+    border-color: aqua; 
+}
+    
+    .readmore__content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap:20px;
+    }
+    .readmore__left, .readmore__right{
+        flex: 1;
+    }
+    .readmore__left {
+        display: flex;
+        flex-direction: column;
+        gap:8px;
+    }
+    .readmore__right {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .readmore__img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .readmore__hidden{
+    font-size: 14px;
+    color: #848585;
+    position: relative;
+    width: 100%;
+    display: block;
+}    
+}
+
+
+/*========DESKTOP========*/
+@media (min-width: 1025px) {
+    * {background: #F8F8F8;}
+    .menu__btn:hover {
+    color: #848585; 
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    outline: none;
+    border-color: aqua; 
+}
+  .container {
+    box-sizing: border-box;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__icon--menu,
+.header__logo,
+.header__icon--call,
+.header__icon--message,
+.header__icon--profile,
+.header__icon--repair,
+.header__icon--checkstatus { display: none;}
+.promo__right {display: flex;}
+
+.readmore__content {
+    flex-direction: row;
+    gap: 20px;
+}
+.readmore__left,
+.readmore__right {
+    flex: 1;
+    max-width: 50%;
+}
+.readmore__img {
+    width: 100%;
+    height: auto;
+    display: block;
+     border-radius: 6px;
+}
+.readmore-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+ .readmore__hidden{
+    font-size: 14px;
+    color: #848585;
+    position: relative;
+    width: 100%;
+    display: block;
+}
+}
