@@ -19,6 +19,9 @@ img {
     display: block;
 }
 /*=======HEADER========*/
+.header{
+    background-color: white;
+}
 .header__icon {
     width: 40px;
     height: 40px;
@@ -31,11 +34,10 @@ img {
     height: 54px;
 }
 .header__divider {
-    width: 2px;
+    transform: scaleX(0.5); /*width не применялся*/
     height: 32px;
     background-color: #EAEAEA;
-    margin: 0 8px;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 .header__icon--menu {background-image: url(./assets/ic/burger.svg)}
 .header__logo {background-image: url(./assets/ic/444.svg)}
@@ -67,6 +69,8 @@ img {
     position: relative;
     margin-top: 0;
     margin-bottom: 0;
+    font-size: 28px;
+    font-weight: 400; /*сделала шрифт тоньше в мобильной версии*/
 }
 .promo__title::before {
     content: "";
@@ -136,7 +140,8 @@ margin: 10px;;
  
 }
 
-.menu__btn {
+.menu__btn, 
+.menu__btn--active {
     background: transparent;
     flex-shrink: 0; 
     min-width: auto;
@@ -153,13 +158,12 @@ margin: 10px;;
     transition: border-color 0.3s, color 0.3s;
 }
 
-.menu__btn:active,
-.menu__btn:focus {
+.menu__btn--active {
     border-color: aqua;
     color: #848585;
-    border-radius: 10px;
+    border-radius: 10px;/*добавила отдельный класс, чтобы был выбран по умолчанию*/
     outline: none;
-}
+} 
 
 /*========MAIN========*/
 .readmore__content {
@@ -195,11 +199,40 @@ margin: 10px;;
 }
 /*========TABLET========*/
 
-@media (min-width:768px) and (max-width: 1024px) {
+@media (min-width:768px) and (max-width: 1024px)
+ {
 .header__icon--call,
 .header__icon--message,
 .header__icon--profile {
     display: inline-block;
+}
+.header {
+    margin-bottom: 40px;
+}
+.promo,
+.main
+{
+    background-color:#F8F8F8;
+}
+.promo__title {
+    font-family: TT Lakes;
+    padding-left: 28px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+.promo__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: aqua;
+    border-radius: 2px;
 }
     .container {
         display: flex;
@@ -212,6 +245,9 @@ margin: 10px;;
     display: flex;
     align-items: center;
     gap: 12px;
+}
+.menu__btn--active {
+    display: none;
 }
 
     .menu__btn:focus-visible {
@@ -257,6 +293,65 @@ margin: 10px;;
 
 
 /*========DESKTOP========*/
+.promo__content {
+    align-items: center; /*выровняла контент*/
+}
+.promo__title {
+    font-family: TT Lakes;
+    padding-left: 28px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 28px;
+    font-weight: 600; /*сделала жирным*/
+}
+.promo__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: aqua;
+    border-radius: 2px;
+}
+.menu {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 10px 0;
+  cursor: pointer;
+
+}
+.menu__slide::-webkit-scrollbar {
+    display: none;
+}
+
+.menu__slide {
+margin: 10px;;
+  display: flex; 
+  margin: 0;
+  white-space: nowrap;
+  list-style: none;
+  gap: 16px;
+  padding: 0 10px;
+ 
+}
+
+.menu__btn--active {
+    display: none;/*убрала значение по умочанию, т.к на декстопной отображется фокус*/
+    
+}
+
+.menu__btn:active,
+.menu__btn:focus {
+    border-color: aqua;
+    color: #848585;
+    border-radius: 10px;
+    outline: none;
+}
 @media (min-width: 1025px) {
     * {background: #F8F8F8;}
     .menu__btn:hover {
