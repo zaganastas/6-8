@@ -18,25 +18,42 @@ img {
     max-width: 100%;
     display: block;
 }
+
 /*=======HEADER========*/
-.header{
-    background-color: white;
-}
+.promo,
+.main
+{ 
+background-color:#F8F8F8; /*не действует на отступы блока общего контейнера*/
+} 
 .header__icon {
     width: 40px;
     height: 40px;
     border: none;
     background-color: transparent;
+    cursor: pointer;
+}
+
+.promo-btn,
+.readmore-btn,
+.menu__btn {
+    cursor: pointer; /*добавила курсор*/
 }
 
 .header__logo {
+    background: url('./assets/ic/444.svg') no-repeat center/contain;
+    display: block;
+    width: 103px;
+    height: 54px; /*изменила и добавила лого через img здесь два варианта */
+}
+
+/* .header__logo {
     width: 103px;
     height: 54px;
-}
-.header__divider {
+    background-repeat: no-repeat; /*лого отображается правильно*/ */
+
+    .header__divider {
     transform: scaleX(0.5); /*width не применялся*/
     height: 32px;
-    background-color: #EAEAEA;
     border-radius: 2px;
 }
 .header__icon--menu {background-image: url(./assets/ic/burger.svg)}
